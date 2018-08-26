@@ -13,6 +13,13 @@ Write code for a remote controlled rover: Motor control, forward and reverse, tu
 
 Test -> Devise tests based on breadboard and LEDs
 
+Progress:
+* Demonstrate Motor control - DONE 
+* Demonstrate FWD and REV -  -
+* Demonstrate Turn -  -
+* Demonstrate Pivot -  -
+* Demonstrate Remote Control -  -
+
 Challenge 2: Due by Sunday 9/09/2018
 
 Write code for movement based on sensor input, 
