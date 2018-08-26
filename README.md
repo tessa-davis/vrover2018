@@ -5,7 +5,6 @@ https://github.com/kiko84761/vrover2018
 https://onevmw-my.sharepoint.com/:f:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code?csf=1&e=xLqxrs
 
 3. Method:
-Reference tutorial: https://www.youtube.com/watch?v=LlFkybEQFFA&index=2&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
 
 Challenge 1: Due by Saturday 2/09/2018
 
@@ -31,3 +30,5 @@ Challenge 3: Due by Sunday 16/09/2018
 Define requirements and add code for autonomous vehicle AI
 
 Test -> Requires vehicle prototype for AI training - test in Sydney at group meet up on 20th/21st Sept
+
+Reference tutorial: https://www.youtube.com/watch?v=LlFkybEQFFA&index=2&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
