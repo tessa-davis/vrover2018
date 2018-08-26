@@ -1,10 +1,7 @@
-1. Please see code repository at:
-https://github.com/kiko84761/vrover2018
-
-2. One-Drive folder contains documentation of tests: 
+NOTE: One-Drive folder contains documentation of tests: 
 https://onevmw-my.sharepoint.com/:f:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code?csf=1&e=xLqxrs
 
-3. Method:
+Method:
 
 Challenge 1: Due by Saturday 2/09/2018
 
