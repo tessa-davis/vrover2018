@@ -1,3 +1,5 @@
+Goal: Write and test code for a mini Mars Rover based on RPi 3B
+
 NOTE: One-Drive folder contains documentation of tests: 
 https://onevmw-my.sharepoint.com/:f:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code?csf=1&e=xLqxrs
 
