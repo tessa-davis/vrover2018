@@ -13,7 +13,7 @@ Test -> Devise tests based on breadboard and LEDs
 
 Progress:
 * Demonstrate Motor control - DONE - 26/08/2018
-* Demonstrate FWD and REV -  -
+* Demonstrate FWD and REV - DONE - 26/06/2018
 * Demonstrate Turn -  -
 * Demonstrate Pivot -  -
 * Demonstrate Remote Control -  -
