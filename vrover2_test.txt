@@ -1,0 +1,18 @@
+Test script vrover1.py:
+
+20180824 - PASS
+
+Following tutorial at:https://www.youtube.com/watch?v=TtKUSFqtFmE&index=5&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
+
+Script assumes motors for right side are connected to the same output for fwd and for reverse.
+
+Spins 4 motors forward 3 seconds and reverse for 3 seconds.
+
+Code tested on output to LEDs (see video):
+
+blue lead -> Red LED and Red LED back right
+purple lead -> Yellow LED and Green LED front left
+grey lead -> Yellow LED and Green LED front right
+white lead -> Red LED and Red LED back right
+
+See: https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover2_test.MOV?csf=1&e=UnL0RS
