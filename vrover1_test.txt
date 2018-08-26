@@ -1,6 +1,7 @@
 Test script vrover1.py:
 
-20180824 - PASS
+20180824 - PASS - See: 
+https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover1_test.MOV?csf=1&e=zyqxTZ
 
 Script spins 4 motors for 5 seconds.
 
@@ -11,6 +12,4 @@ purple lead -> red LED
 grey lead -> green LED
 white lead -> yellow LED
 
-Test Documentation - See: https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover1_test.MOV?csf=1&e=zyqxTZ
-
-Source material:https://www.youtube.com/watch?v=pbCdNh0TiUo&index=3&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
+Reference material:https://www.youtube.com/watch?v=pbCdNh0TiUo&index=3&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
