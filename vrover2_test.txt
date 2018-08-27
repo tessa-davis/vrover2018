@@ -1,6 +1,6 @@
-Test script vrover1.py:
+Test script vrover2.py:
 
-20180824 - PASS
+20180827 - PASS
 
 Following tutorial at:https://www.youtube.com/watch?v=TtKUSFqtFmE&index=5&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
 
@@ -10,9 +10,13 @@ Spins 4 motors forward 3 seconds and reverse for 3 seconds.
 
 Code tested on output to LEDs (see video):
 
-blue lead -> Red LED and Red LED back right
-purple lead -> Yellow LED and Green LED front left
-grey lead -> Yellow LED and Green LED front right
-white lead -> Red LED and Red LED back right
+#Blue Lead goes to right front wheel- forward spin (rt_fr_fwd) - green LED
+#White lead goes to right front wheel- reverse spin (rt_fr_rev) - red LED
+#Pink lead goes to right back wheel- forward spin (rt_bk_fwd) - green LED
+#Grey lead goes to right back wheel- reverse spin (rt_fr_rev) - red LED
+#Purple Lead goes to left front wheel- forward spin (lft_fr_fwd) - yellow LED
+#Yellow lead goes to left front wheel- reverse spin (lft_fr_rev) - red LED
+#Green lead goes to left back wheel- forward spin (lft_bk_fwd) - yellow LED
+#Orange lead goes to left back wheel- reverse spin (lft_fr_rev) - red LED
 
-See: https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover2_test.MOV?csf=1&e=UnL0RS
+See: https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover2_test.MOV?csf=1&e=w39MCt
