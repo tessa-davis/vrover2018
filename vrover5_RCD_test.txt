@@ -1,0 +1,35 @@
+Test script vrover5_RCD.py:
+
+20180901 - PASS
+
+Following tutorial at:
+https://www.youtube.com/watch?v=7k5H5R-sHBE&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4&index=8
+
+Script assumes each motor is connected to a separate output for fwd and reverse.
+
+Key bindings:
+    
+'w': forward 1 second
+'s': reverse 1 second
+'a': turn_left_fwd 1 second
+'d': turn_right_fwd 1 second
+'q': pivot_left 1 second
+'e': pivot_right 1 second
+'z': turn_left_rev 1 second
+'c': turn_right_rev 1 second
+
+
+#Goal: Demonstrate capability to drive vehicle based on user input
+
+Code tested on output to LEDs (see video):
+
+#Blue Lead goes to right front wheel- forward spin (rt_fr_fwd) - green LED
+#White lead goes to right front wheel- reverse spin (rt_fr_rev) - red LED
+#Pink lead goes to right back wheel- forward spin (rt_bk_fwd) - green LED
+#Grey lead goes to right back wheel- reverse spin (rt_fr_rev) - red LED
+#Purple Lead goes to left front wheel- forward spin (lft_fr_fwd) - yellow LED
+#Yellow lead goes to left front wheel- reverse spin (lft_fr_rev) - red LED
+#Green lead goes to left back wheel- forward spin (lft_bk_fwd) - yellow LED
+#Orange lead goes to left back wheel- reverse spin (lft_fr_rev) - red LED
+
+See: https://onevmw-my.sharepoint.com/:v:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code/vrover4_test.MOV?csf=1&e=pXJr4G

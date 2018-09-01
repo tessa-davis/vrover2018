@@ -1,5 +1,7 @@
 import RPi.GPIO as gpio
 import time
+import sys
+import Tkinter as tk
 
 ##Goal: Drive vechicle using Remote Control including:
 ## ---Drive Foward
@@ -46,7 +48,6 @@ def init():
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
 def forward(tf):
-    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fr_fwd, True)
     gpio.output(rt_fr_rev, False)
@@ -62,7 +63,6 @@ def forward(tf):
 
 ##Define a function that will drive the vechicle in reverse for an amount of time (tf)
 def reverse(tf):
-    init()
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, True)
     gpio.output(lft_fr_fwd, False)
@@ -73,15 +73,9 @@ def reverse(tf):
     gpio.output(lft_bk_rev, True)
     time.sleep(tf)
     gpio.cleanup()
-
-##Test drive forward for 3 seconds
-#forward(3)
-##Test drive in reverse for 3 seconds
-#reverse(3)
     
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
 def turn_left_fwd(tf):
-    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fr_fwd, True)
     gpio.output(rt_fr_rev, False)
@@ -97,7 +91,6 @@ def turn_left_fwd(tf):
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_fwd(tf):
-    init()
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, False)
     gpio.output(lft_fr_fwd, True)
@@ -111,7 +104,6 @@ def turn_right_fwd(tf):
 
 ##Define a function that will drive the vechicle in reverse and left for an amount of time (tf)
 def turn_left_rev(tf):
-    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, True)
@@ -127,7 +119,6 @@ def turn_left_rev(tf):
     
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_rev(tf):
-    init()
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, False)
     gpio.output(lft_fr_fwd, False)
@@ -139,18 +130,8 @@ def turn_right_rev(tf):
     time.sleep(tf)
     gpio.cleanup()
     
-##turn vehicle left while moving forward for 1 second
-#turn_left_fwd(1)
-##turn vehicle right while moving forward for 1 second
-#turn_right_fwd(1)
-##turn vehicle left while reversing for 1 second
-#turn_left_rev(1)
-##turn vehicle right while reversing for 1 second
-#turn_right_rev(1)
-    
 ##Define a function that will pivot the vechicle clockwise (right) for an amount of time (tf)
 def pivot_right(tf):
-    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, True)
@@ -165,7 +146,6 @@ def pivot_right(tf):
 
 ##Define a function that will pivot the vechicle counter-clockwise (left) for an amount of time (tf)
 def pivot_left(tf):
-    init()
     gpio.output(rt_fr_fwd, True)
     gpio.output(rt_fr_rev, False)
     gpio.output(lft_fr_fwd, False)
@@ -176,10 +156,46 @@ def pivot_left(tf):
     gpio.output(lft_bk_rev, True)
     time.sleep(tf)
     gpio.cleanup()
-    
-#Pivot vehicle clockwise (right) for 1 second
-pivot_right(1)
-#Pivot vehicle counterclockwise (left) while moving forward for 1 second
-pivot_left(1)
 
+
+def key_input(event):
+    init()
+    print 'Key:', event.char
+    key_press = event.char
+    sleep_time = 1
     
+    if key_press.lower() == 'w':
+        forward(sleep_time)
+    elif key_press.lower() == 's':
+        reverse(sleep_time)
+    elif key_press.lower() == 'a':
+        turn_left_fwd(sleep_time)
+    elif key_press.lower() == 'd':
+        turn_right_fwd(sleep_time)
+    elif key_press.lower() == 'q':
+        pivot_left(sleep_time)
+    elif key_press.lower() == 'e':
+        pivot_right(sleep_time)
+    elif key_press.lower() == 'z':
+        turn_left_rev(sleep_time)
+    elif key_press.lower() == 'c':
+        turn_right_rev(sleep_time)
+        
+print("""
+FEvR11 waiting for directions:
+
+'w': forward 1 second
+'s': reverse 1 second
+'a': turn_left_fwd 1 second
+'d': turn_right_fwd 1 second
+'q': pivot_left 1 second
+'e': pivot_right 1 second
+'z': turn_left_rev 1 second
+'c': turn_right_rev 1 second
+
+Your input:
+
+""")
+command = tk.Tk()
+command.bind('<KeyPress>', key_input)
+command.mainloop()
