@@ -16,7 +16,7 @@ Progress:
 * vrover2 - Demonstrate FWD and REV - DONE - 26/08/2018
 * vrover3 - Demonstrate Turn - DONE - 1/09/2018
 * vrover4 - Demonstrate Pivot - DONE - 1/09/2018
-* vrover5 - Demonstrate Remote Control -  -
+* vrover5 - Demonstrate Remote Control - DONE - 2/09/2018
 
 Challenge 2: Due by Sunday 9/09/2018
 
