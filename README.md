@@ -20,9 +20,12 @@ Progress:
 
 Challenge 2: Due by Sunday 9/09/2018
 
-Write code for movement based on sensor input, 
+* vrover6 - Measure distance based on HC-SRO4 input
+* vrover 7 - Direct vehicle based on sensor input
+* Build multi-sensor prototype
+* vrover 8 - Direct vehicle based on multi-sensor input
 
-Test -> Requires testing with input (analogous to Sonar). Use breadboard and sensor (TBC)
+Test -> Use HC-SR04 input mounted on breadboard to light up LEDs
 
 Challenge 3: Due by Sunday 16/09/2018
 
