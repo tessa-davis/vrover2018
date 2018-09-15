@@ -21,9 +21,9 @@ Progress:
 Challenge 2: Due by Sunday 9/09/2018
 
 * vrover6 - Measure distance based on HC-SRO4 input
-* vrover 7 - Direct vehicle based on sensor input
-* Build multi-sensor prototype
-* vrover 8 - Direct vehicle based on multi-sensor input
+* vrover7 - Direct vehicle based on single sensor input (Vehicle uses auto correct based on single sensor input)
+* vrover6 - Add multiple sensors
+* vrove7 - Direct vehicle based on multi-sensor input (Vehicle uses auto correct based on multi sensor input)
 
 Test -> Use HC-SR04 input mounted on breadboard to light up LEDs
 
