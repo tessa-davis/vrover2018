@@ -20,7 +20,9 @@ Progress:
 
 Challenge 2: Due by Sunday 9/09/2018
 
-* vrover6 - Measure distance based on HC-SRO4 input
+* driveme.py - Library of drive controls - DONE - 16/09/2018
+* sensors.py - Library to Measure distance based on HC-SRO4 input - sensor - DONE - 16/09/2018
+* explore.py - explore without sensor input - DONE - 16/09/2018
 * vrover7 - Direct vehicle based on single sensor input (Vehicle uses auto correct based on single sensor input)
 * vrover6 - Add multiple sensors
 * vrove7 - Direct vehicle based on multi-sensor input (Vehicle uses auto correct based on multi sensor input)
