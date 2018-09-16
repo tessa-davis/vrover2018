@@ -180,6 +180,8 @@ def key_input(event):
         turn_left_rev(sleep_time)
     elif key_press.lower() == 'c':
         turn_right_rev(sleep_time)
+    else:
+        pass
         
 print("""
 FEvR11 waiting for directions:
