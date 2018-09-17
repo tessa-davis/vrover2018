@@ -19,7 +19,66 @@ import random
 
 #Assumptions: see driveme.py
 
+sensors.distance()
+
 def check_front():
+    dist = sensors.distance()
+
+    if dist < 15:
+        print('Too close,',dist)
+
+    else:
+        print('Front okay,',dist)
+
+def autonomy():
+    tf = 1
+    x = random.randrange(0, 8)
+
+    if x == 0:
+        check_front()
+        driveme.init()
+        driveme.forward(3)
+
+    elif x == 1:
+        driveme.init()
+        driveme.pivot_left(tf)
+
+    elif x == 2:
+        check_front()
+        driveme.init()
+        driveme.pivot_right(tf)
+
+    elif x == 3:
+        check_front()
+        driveme.init()
+        driveme.turn_left_fwd(tf)
+
+    elif x == 4:
+        check_front()
+        driveme.init()
+        driveme.turn_right_fwd(tf)
+
+    elif x == 5:
+        check_front()
+        driveme.init()
+        driveme.turn_left_rev(tf)
+
+    elif x == 6:
+        check_front()
+        driveme.init()
+        driveme.turn_right_rev(tf)
+
+    elif x == 7:
+        check_front()
+        driveme.init()
+        driveme.reverse(tf)
+
+for z in range(10):
+    autonomy()
+
+
+
+'''def check_front():
     driveme.init()
     dist = sensors.distance()
 
@@ -40,7 +99,7 @@ def check_front():
                 sys.exit()
 
 def autonomy():
-    tf = 0.3
+    tf = 2
     x = random.randrange(0, 4)
 
     if x == 0:
@@ -68,5 +127,5 @@ def autonomy():
             driveme.turn_left_fwd(tf)
 
 for z in range(10):
-    autonomy()
+    autonomy()'''
 

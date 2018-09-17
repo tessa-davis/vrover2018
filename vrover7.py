@@ -1,8 +1,8 @@
 import RPi.GPIO as gpio
 import time
 import sys
-import Tkinter as tk
-from vrover6 import distance
+#import Tkinter as tk
+from sensors import distance
 
 #Goal: Drive vechicle using Remote Control including:
 ## ---Drive Foward
@@ -24,6 +24,7 @@ from vrover6 import distance
 #Yellow lead goes to left front wheel- reverse spin (lft_fr_rev) - red LED
 #Green lead goes to left back wheel- forward spin (lft_bk_fwd) - yellow LED
 #Orange lead goes to left back wheel- reverse spin (lft_fr_rev) - red LED
+
 
 ##Define variables for each wheel to map to the GPIO pin output. Replace variables with the corresponding GPIO pin on your rover.
 rt_fr_fwd = 16
@@ -158,7 +159,7 @@ def pivot_left(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-
+'''
 def key_input(event):
     init()
     print('Key:', event.char)
@@ -183,7 +184,8 @@ def key_input(event):
         turn_right_rev(sleep_time)
     else:
         pass
-    
+'''
+
 ##Define a variable "curDis" to read the current distance measured by the sensor
     curDis = distance('cm')
     print('curdis is', curDis)

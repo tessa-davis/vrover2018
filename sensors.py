@@ -3,16 +3,21 @@ import RPi.GPIO as gpio
 ##Import the time library
 import time
 
-#front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
-#front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
+##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
+##front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
 
-front_sensor_trig = 31
-front_sensor_echo = 29
+##front_sensor_trig = 31
+##front_sensor_echo = 29
 
 print("Distance Measurement in Progress")
 
 ##Define the distance function (to be imported into drive script)
-def distance():
+def front_distance():
+
+##Define the GPIO pin number connected to trig
+    front_sensor_trig = 31
+##Define the GPIO pin number connected to echo
+    front_sensor_echo = 29
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
