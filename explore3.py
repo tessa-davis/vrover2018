@@ -38,6 +38,7 @@ def check_front():
 ##Instruct action: if an object is closer than 15 cm away, print "Too close, and the distance", and continue
     if f_dist < 15:
         print('Too close,', f_dist)
+        driveme.init()
         driveme.reverse(2)
 ##Otherwise, print 'Front okay' and continue
     else:
