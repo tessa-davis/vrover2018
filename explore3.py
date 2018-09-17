@@ -38,6 +38,7 @@ def check_front():
 ##Instruct action: if an object is closer than 15 cm away, print "Too close, and the distance", and continue
     if f_dist < 15:
         print('Too close,', f_dist)
+        driveme.reverse(2)
 ##Otherwise, print 'Front okay' and continue
     else:
         print('Front okay,', f_dist)
@@ -53,7 +54,7 @@ def autonomy():
 ##Drive forward for 5 seconds if x = 0
     if x == 0:
 ##Repeat the steps below 30 times
-        for y in range(60):
+        for y in range(30):
             check_front()
 ##Initialise GPIO pins (based on instructions defined in driveme.py)
             driveme.init()
@@ -105,7 +106,7 @@ def autonomy():
         driveme.reverse(tf)
 '''
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
-for z in range(10):
+for z in range(5):
     autonomy()
 
 
