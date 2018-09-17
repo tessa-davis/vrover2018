@@ -28,7 +28,7 @@ def front_distance():
 ##Making sure that the output pin has no pre-configured value
     gpio.output(front_sensor_trig, False)
 ##Print out notice that the sensor is initiating
-    print("Waiting for sensor to settle")
+##    print("Waiting for sensor to settle")
 ##Give the sensor time to come online
     time.sleep(2)
 
