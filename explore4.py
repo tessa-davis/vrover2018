@@ -31,17 +31,10 @@ import random
 ##Call the function front_distance from the local python script sensors.py
 sensors2.front_distance()
 
-##Define the function check_front to check the distance from the front sensor to the nearest object and respond
-def check_front():
-##Define the variable f_dist as the distance from the front sensor to the nearest object
-    f_dist = sensors2.front_distance()
-
 ##Instruct action: if an object is closer than 15 cm away, print "Too close, and the distance", and continue
-    while f_dist < 15:
-        print('Too close,', f_dist)
+    if f_dist < 15:
         driveme.init()
         driveme.reverse(2)
-##Otherwise, print 'Front okay' and continue
 
 ##Define the function autonomy
 def autonomy():
