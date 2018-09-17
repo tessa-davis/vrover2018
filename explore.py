@@ -27,7 +27,7 @@ import random
 
 #Assumptions: see driveme.py
 
-##Call the function distance from the local python script sensors
+##Call the function distance from the local python script sensors.py
 sensors.front_distance()
 
 ##Define the function autonomy
@@ -75,7 +75,7 @@ def autonomy():
         driveme.init()
         driveme.turn_right_rev(tf)
 
-##Reverse for tf seconds if x = 6
+##Reverse for tf seconds if x = 7
     elif x == 7:
         driveme.init()
         driveme.reverse(tf)
