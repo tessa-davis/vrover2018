@@ -1,0 +1,23 @@
+Last performed: 20180916
+State: PASS
+
+##Import the GPIO library
+##Import the time library
+#front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
+#front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
+
+The script vrover6.py tests the input from a HC-SR04 ultrasonic sensor.
+
+Method:
+
+See test results here: https://onevmw-my.sharepoint.com/:f:/r/personal/asingleton_vmware_com/Documents/ANZ%20IoT%20Virtual%20Team/Autonomous%20Vehicle%20Code?csf=1&e=dTENDu
+
+1. Attach sensor as showin in vrover6_test2.jpg
+tutorial: https://www.youtube.com/watch?v=wCKbpw5bQMs&index=10&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
+2. Program sensor to display distance to object
+tutorial: https://pimylifeup.com/raspberry-pi-distance-sensor/
+
+Notes:
+##The speed of sound in air at sea level = 343m/s or 34 300cm/s
+##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
+    distance = 17150 * pulse_duration

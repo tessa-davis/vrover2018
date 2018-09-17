@@ -2,8 +2,9 @@ import RPi.GPIO as gpio
 import time
 import sys
 import Tkinter as tk
+from vrover6 import distance
 
-##Goal: Drive vechicle using Remote Control including:
+#Goal: Drive vechicle using Remote Control including:
 ## ---Drive Foward
 ## ---Drive in Reverse
 ## ---Turn left while moving forward
@@ -160,7 +161,7 @@ def pivot_left(tf):
 
 def key_input(event):
     init()
-    print 'Key:', event.char
+    print('Key:', event.char)
     key_press = event.char
     sleep_time = 1
     
@@ -182,6 +183,14 @@ def key_input(event):
         turn_right_rev(sleep_time)
     else:
         pass
+    
+##Define a variable "curDis" to read the current distance measured by the sensor
+    curDis = distance('cm')
+    print('curdis is', curDis)
+    
+    if curDis < 20:
+       init()
+       reverse(2)
         
 print("""
 FEvR11 waiting for directions:

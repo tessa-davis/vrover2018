@@ -1,17 +1,17 @@
 import RPi.GPIO as gpio
 import time
 import sys
-import Tkinter as tk
 
-##Goal: Drive vechicle using Remote Control including:
-## ---Drive Foward
-## ---Drive in Reverse
-## ---Turn left while moving forward
-## ---Turn right while moving forward
-## ---Turn left while moving backward
-## ---Turn right while moving backward
-## ---Pivot clockwise (defined as from a 'birds eye view' with 12o'clock at the front of the vehicle (Pivot right)
-## ---Pivot counter clockwise (Pivot left)
+#Goal: Drive vechicle using Remote Control including:
+## ---driveme.init() --- Initialise GPIO pins to drive as output
+## ---driveme.forward(tf) --- Drive Foward
+## ---driveme.reverse --- Drive in Reverse
+## ---driveme.turn_left_fwd --- Turn left while moving forward
+## ---driveme.turn_right_fwd --- Turn right while moving forward
+## ---driveme.turn_left_rev --- Turn left while moving backward
+## ---driveme.turn_right_rev --- Turn right while moving backward
+## ---driveme.pivot_right --- Pivot clockwise (defined as from a 'birds eye view' with 12o'clock at the front of the vehicle (Pivot right)
+## ---driveme.pivot_left --- Pivot counter clockwise (Pivot left)
 
 #Assumption: 4 Wheel Independence
 #Refer to test image - colour is lead colour. GPIO input defined in variables:
@@ -23,6 +23,7 @@ import Tkinter as tk
 #Yellow lead goes to left front wheel- reverse spin (lft_fr_rev) - red LED
 #Green lead goes to left back wheel- forward spin (lft_bk_fwd) - yellow LED
 #Orange lead goes to left back wheel- reverse spin (lft_fr_rev) - red LED
+
 
 ##Define variables for each wheel to map to the GPIO pin output. Replace variables with the corresponding GPIO pin on your rover.
 rt_fr_fwd = 16
@@ -157,47 +158,3 @@ def pivot_left(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-
-def key_input(event):
-    init()
-    print 'Key:', event.char
-    key_press = event.char
-    sleep_time = 1
-    
-    if key_press.lower() == 'w':
-        forward(sleep_time)
-    elif key_press.lower() == 's':
-        reverse(sleep_time)
-    elif key_press.lower() == 'a':
-        turn_left_fwd(sleep_time)
-    elif key_press.lower() == 'd':
-        turn_right_fwd(sleep_time)
-    elif key_press.lower() == 'q':
-        pivot_left(sleep_time)
-    elif key_press.lower() == 'e':
-        pivot_right(sleep_time)
-    elif key_press.lower() == 'z':
-        turn_left_rev(sleep_time)
-    elif key_press.lower() == 'c':
-        turn_right_rev(sleep_time)
-    else:
-        pass
-        
-print("""
-FEvR11 waiting for directions:
-
-'w': forward 1 second
-'s': reverse 1 second
-'a': turn_left_fwd 1 second
-'d': turn_right_fwd 1 second
-'q': pivot_left 1 second
-'e': pivot_right 1 second
-'z': turn_left_rev 1 second
-'c': turn_right_rev 1 second
-
-Your input:
-
-""")
-command = tk.Tk()
-command.bind('<KeyPress>', key_input)
-command.mainloop()
