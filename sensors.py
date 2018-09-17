@@ -30,7 +30,7 @@ def front_distance():
 ##Print out notice that the sensor is initiating
 ##    print("Waiting for sensor to settle")
 ##Give the sensor time to come online
-    time.sleep(2)
+    time.sleep(0.03)
 
 ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
     gpio.output(front_sensor_trig, True)
