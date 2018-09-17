@@ -14,8 +14,9 @@ import random
 #Goal:
 ##1. Drive vechicle autonomously in "explore" mode.
 ##2. Constantly check the distance on the front sensor, print the result and take an additional remediation action
-##1. Modify explore script to work with sensors2.py so that the wheels drive continuously if the distance is > x i.e. the vehicle shouldn't stop to measure distance
-## ---sensors.distance() --- Return the distance from the sensor to the nearest object
+##3. Modify explore script to work with sensors2.py so that the wheels drive with less jitter if the distance is > x i.e. the vehicle shouldn't stop to measure distance
+## Note: The only way to do this is to reduce the time it takes to get a measurement. Requires some kind of continuous variable definition
+# ---sensors.distance() --- Return the distance from the sensor to the nearest object
 ## ---driveme.init() --- Initialise GPIO pins to drive as output
 ## ---driveme.forward(tf) --- Drive Foward
 ## ---driveme.reverse(tf) --- Drive in Reverse
