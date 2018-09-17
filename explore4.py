@@ -71,8 +71,8 @@ def autonomy():
     elif x == 2:
         for y in range(5):
             check_front()
-                driveme.init()
-                driveme.pivot_right(tf)
+            driveme.init()
+            driveme.pivot_right(tf)
 
 ##Drive forward and to the left for tf seconds if x = 3
     elif x == 3:
