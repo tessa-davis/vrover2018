@@ -22,17 +22,11 @@ Challenge 2: Due by Sunday 9/09/2018
 
 * driveme.py - Library of drive controls - DONE - 16/09/2018
 * sensors.py - Library to Measure distance based on HC-SRO4 input - sensor - DONE - 16/09/2018
-* explore.py - explore without sensor input - DONE - 16/09/2018
-* vrover7 - Direct vehicle based on single sensor input (Vehicle uses auto correct based on single sensor input)
-* vrover6 - Add multiple sensors
-* vrove7 - Direct vehicle based on multi-sensor input (Vehicle uses auto correct based on multi sensor input)
+* explore.py - explore with sensor input - DONE - 17/09/2018
 
-Test -> Use HC-SR04 input mounted on breadboard to light up LEDs
+Challenge 3:
 
-Challenge 3: Due by Sunday 16/09/2018
-
-Define requirements and add code for autonomous vehicle AI
-
-Test -> Requires vehicle prototype for AI training - test in Sydney at group meet up on 20th/21st Sept
+1. Define desired behaviors for "explore" and "respond"
+2. Program behavior as defined in 1.
 
 Reference tutorial: https://www.youtube.com/watch?v=LlFkybEQFFA&index=2&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
