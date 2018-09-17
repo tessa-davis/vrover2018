@@ -14,8 +14,6 @@ import random
 #Goal:
 ##1. Drive vechicle autonomously in "explore" mode.
 ##2. Constantly check the distance on the front sensor, print the result and take an additional remediation action
-##3. Modify explore script to work with sensors.py so that the wheels drive with less jitter if the distance is > x i.e. the vehicle shouldn't stop to measure distance
-## Note: The only way to do this is to reduce the time it takes to get a measurement. Requires some kind of continuous variable definition
 # ---sensors.distance() --- Return the distance from the sensor to the nearest object
 ## ---driveme.init() --- Initialise GPIO pins to drive as output
 ## ---driveme.forward(tf) --- Drive Foward
@@ -112,56 +110,3 @@ def autonomy():
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
 for z in range(10):
     autonomy()
-
-
-
-'''def check_front():
-    driveme.init()
-    dist = sensors.distance()
-
-    if dist < 15:
-        print('Too close,',dist)
-        driveme.init()
-        driveme.reverse(2)
-        dist = sensors.distance()
-        if dist < 15:
-            print('Too close,', dist)
-            driveme.init()
-            driveme.pivot_left(3)
-            driveme.init()
-            driveme.reverse(2)
-            dist = sensors.distance()
-            if dist < 15:
-                print('Too close, giving up', dist)
-                sys.exit()
-
-def autonomy():
-    tf = 2
-    x = random.randrange(0, 4)
-
-    if x == 0:
-        for y in range(30):
-            check_front()
-            driveme.init()
-            driveme.forward(tf)
-
-    elif x == 1:
-        for y in range (30):
-            check_front()
-            driveme.init()
-            driveme.pivot_left(tf)
-
-    elif x == 2:
-        for y in range (30):
-            check_front()
-            driveme.init()
-            driveme.turn_right_fwd(tf)
-
-    elif x == 3:
-        for y in range (30):
-            check_front()
-            driveme.init()
-            driveme.turn_left_fwd(tf)
-
-for z in range(10):
-    autonomy()'''
