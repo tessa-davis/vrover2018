@@ -5,7 +5,7 @@ import time
 ##Import public library python-sys
 import sys
 ##Import local library python-sensors: see sensors.py
-import sensors2
+import sensors
 ##Import local library python-driveme: see driveme.py
 import driveme
 ##Import public library python-random
@@ -14,7 +14,7 @@ import random
 #Goal:
 ##1. Drive vechicle autonomously in "explore" mode.
 ##2. Constantly check the distance on the front sensor, print the result and take an additional remediation action
-##3. Modify explore script to work with sensors2.py so that the wheels drive with less jitter if the distance is > x i.e. the vehicle shouldn't stop to measure distance
+##3. Modify explore script to work with sensors.py so that the wheels drive with less jitter if the distance is > x i.e. the vehicle shouldn't stop to measure distance
 ## Note: The only way to do this is to reduce the time it takes to get a measurement. Requires some kind of continuous variable definition
 # ---sensors.distance() --- Return the distance from the sensor to the nearest object
 ## ---driveme.init() --- Initialise GPIO pins to drive as output
@@ -30,12 +30,12 @@ import random
 #Assumptions: see driveme.py
 
 ##Call the function front_distance from the local python script sensors.py
-sensors2.front_distance()
+sensors.front_distance()
 
 ##Define the function check_front to check the distance from the front sensor to the nearest object and respond
 def check_front():
 ##Define the variable f_dist as the distance from the front sensor to the nearest object
-    f_dist = sensors2.front_distance()
+    f_dist = sensors.front_distance()
 
 ##Instruct action: if an object is closer than 15 cm away, print "Too close, and the distance", and continue
     if f_dist < 15:
