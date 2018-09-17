@@ -54,7 +54,7 @@ def front_distance():
 ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
     front_distance = 17150 * pulse_duration
 ##Return an answer to 2 decimal places
-    front_distance = round(distance, 2)
+    front_distance = round(front_distance, 2)
 
 ##Clen up the GPIO pins
     gpio.cleanup()
