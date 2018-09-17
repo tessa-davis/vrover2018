@@ -19,10 +19,10 @@ import random
 
 #Assumptions: see driveme.py
 
-sensors.distance()
+sensors.front_distance()
 
 def check_front():
-    dist = sensors.distance()
+    dist = sensors.front_distance()
 
     if dist < 15:
         print('Too close,',dist)
@@ -128,4 +128,3 @@ def autonomy():
 
 for z in range(10):
     autonomy()'''
-

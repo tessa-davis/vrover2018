@@ -28,7 +28,7 @@ import random
 #Assumptions: see driveme.py
 
 ##Call the function distance from the local python script sensors
-sensors.distance()
+sensors.front_distance()
 
 ##Define the function autonomy
 def autonomy():
