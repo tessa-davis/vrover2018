@@ -60,49 +60,43 @@ def autonomy():
 
 ##Pivot left for tf seconds if x = 1
     elif x == 1:
-##Initialise GPIO pins (based on instructions defined in driveme.py)
+        check_front()
         driveme.init()
         driveme.pivot_left(tf)
 
 ##Pivot right for tf seconds if x = 2
     elif x == 2:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.pivot_right(tf)
 
 ##Drive forward and to the left for tf seconds if x = 3
     elif x == 3:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.turn_left_fwd(tf)
 
 ##Drive forward and to the right for tf seconds if x = 4
     elif x == 4:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.turn_right_fwd(tf)
 
 ##Drive left and reverse for tf seconds if x = 5
     elif x == 5:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.turn_left_rev(tf)
 
 ##Drive right and reverse for tf seconds if x = 6
     elif x == 6:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.turn_right_rev(tf)
 
 ##Reverse for tf seconds if x = 7
     elif x == 7:
         check_front()
-##Initialise GPIO pins (based on instructions defined in driveme.py)
         driveme.init()
         driveme.reverse(tf)
 
