@@ -47,7 +47,7 @@ def autonomy():
 ##Set the time to run (for actions other than forward)
     tf = 0.03
 ##Introduce a variable, x, that will take on a sudorandom value to drive the vechicle in explore mode. x will take on values from 1-7
-    x = random.randrange(0, 1)
+    x = random.randrange(0, 7)
 ##Set actions for the vechicle based on the value of x
 
 ##Drive forward for 5 seconds if x = 0
@@ -60,50 +60,55 @@ def autonomy():
 ##Drive forward for 0.03 seconds
             driveme.forward(tf)
 
-'''
-
 ##Pivot left for tf seconds if x = 1
     elif x == 1:
-        check_front()
-        driveme.init()
-        driveme.pivot_left(tf)
+        for y in range(5):
+            check_front()
+            driveme.init()
+            driveme.pivot_left(tf)
 
 ##Pivot right for tf seconds if x = 2
     elif x == 2:
+        for y in range(5)
         check_front()
-        driveme.init()
-        driveme.pivot_right(tf)
+            driveme.init()
+            driveme.pivot_right(tf)
 
 ##Drive forward and to the left for tf seconds if x = 3
     elif x == 3:
-        check_front()
-        driveme.init()
-        driveme.turn_left_fwd(tf)
+        for y in range(5)
+            check_front()
+            driveme.init()
+            driveme.turn_left_fwd(tf)
 
 ##Drive forward and to the right for tf seconds if x = 4
     elif x == 4:
-        check_front()
-        driveme.init()
-        driveme.turn_right_fwd(tf)
+        for y in range(5)
+            check_front()
+            driveme.init()
+            driveme.turn_right_fwd(tf)
 
 ##Drive left and reverse for tf seconds if x = 5
     elif x == 5:
-        check_front()
-        driveme.init()
-        driveme.turn_left_rev(tf)
+        for y in range(5)
+            check_front()
+            driveme.init()
+            driveme.turn_left_rev(tf)
 
 ##Drive right and reverse for tf seconds if x = 6
     elif x == 6:
-        check_front()
-        driveme.init()
-        driveme.turn_right_rev(tf)
+        for y in range(5)
+            check_front()
+            driveme.init()
+            driveme.turn_right_rev(tf)
 
 ##Reverse for tf seconds if x = 7
     elif x == 7:
-        check_front()
-        driveme.init()
-        driveme.reverse(tf)
-'''
+        for y in range(5)
+            check_front()
+            driveme.init()
+            driveme.reverse(tf)
+
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
 for z in range(5):
     autonomy()
