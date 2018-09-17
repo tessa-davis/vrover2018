@@ -22,11 +22,10 @@ def distance():
 
 ##Making sure that the output pin has no pre-configured value
     gpio.output(front_sensor_trig, False)
-##Print out notice that the sensor is initiating    
+##Print out notice that the sensor is initiating
     print("Waiting for sensor to settle")
-##Give the sensor time to come online    
+##Give the sensor time to come online
     time.sleep(2)
-
 
 ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
     gpio.output(front_sensor_trig, True)
@@ -42,7 +41,7 @@ def distance():
 ##Take a time stamp of the last recorded moment of a high signal
     while gpio.input(front_sensor_echo) == 1:
         pulse_end = time.time()
-##Pulse_duration is the time that passed between a signal appearing and disappearing 
+##Pulse_duration is the time that passed between a signal appearing and disappearing
     pulse_duration = pulse_end - pulse_start
 
 
@@ -52,7 +51,7 @@ def distance():
 ##Return an answer to 2 decimal places
     distance = round(distance, 2)
 
-##Clen up the GPIO pins        
+##Clen up the GPIO pins
     gpio.cleanup()
 
 ##Instruct the function to return 'distance'
