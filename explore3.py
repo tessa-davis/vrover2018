@@ -103,11 +103,11 @@ def autonomy():
         check_front()
         driveme.init()
         driveme.reverse(tf)
-
+'''
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
 for z in range(10):
     autonomy()
-'''
+
 
 
 '''def check_front():
