@@ -47,7 +47,7 @@ def check_front():
 ##Define the function autonomy
 def autonomy():
 ##Set the time to run (for actions other than forward)
-    tf = 0.03
+    tf = 0.1
 ##Introduce a variable, x, that will take on a sudorandom value to drive the vechicle in explore mode. x will take on values from 1-7
     x = random.randrange(0, 1)
 ##Set actions for the vechicle based on the value of x
@@ -55,7 +55,7 @@ def autonomy():
 ##Drive forward for 5 seconds if x = 0
     if x == 0:
 ##Repeat the steps below 30 times
-        for y in range(30):
+        for y in range(10):
             check_front()
 ##Initialise GPIO pins (based on instructions defined in driveme.py)
             driveme.init()
