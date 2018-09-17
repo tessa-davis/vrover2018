@@ -47,7 +47,7 @@ def autonomy():
 ##Set the time to run (for actions other than forward)
     tf = 0.03
 ##Introduce a variable, x, that will take on a sudorandom value to drive the vechicle in explore mode. x will take on values from 1-7
-    x = random.randrange(0, 8)
+    x = random.randrange(0, 7)
 ##Set actions for the vechicle based on the value of x
 
 ##Drive forward for 5 seconds if x = 0
@@ -102,12 +102,12 @@ def autonomy():
             driveme.init()
             driveme.turn_right_rev(tf)
 
-##Reverse for tf seconds if x = 7
+'''##Reverse for tf seconds if x = 7
     elif x == 7:
         for y in range(10):
             check_front()
             driveme.init()
-            driveme.reverse(tf)
+            driveme.reverse(tf)'''
 
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
 for z in range(10):
