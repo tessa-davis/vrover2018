@@ -5,7 +5,9 @@ import sensors
 import driveme
 import random
 
-#Goal: Drive vechicle autonomously using:
+#Goal:
+##1. Drive vechicle autonomously in "explore" mode.
+##2. Check the distance before performing each action and print the result.
 ## ---sensors.distance() --- Return the distance from the sensor to the nearest object
 ## ---driveme.init() --- Initialise GPIO pins to drive as output
 ## ---driveme.forward(tf) --- Drive Foward
