@@ -47,7 +47,7 @@ def autonomy():
 ##Set the time to run (for actions other than forward)
     tf = 0.03
 ##Introduce a variable, x, that will take on a sudorandom value to drive the vechicle in explore mode. x will take on values from 1-7
-    x = random.randrange(0, 7)
+    x = random.randrange(0, 8)
 ##Set actions for the vechicle based on the value of x
 
 ##Drive forward for 5 seconds if x = 0
