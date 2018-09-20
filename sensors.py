@@ -6,8 +6,13 @@ import time
 ##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
 ##front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
 
-##front_sensor_trig = 31
-##front_sensor_echo = 29
+##front_sensor_trig = 7
+##front_sensor_echo = 11
+##right_sensor_trig = 12
+##right_sensor_echo = 22
+##left_sensor_trig = 29
+##left_sensor_echo = 31
+
 
 print("Distance Measurement in Progress")
 
@@ -15,9 +20,9 @@ print("Distance Measurement in Progress")
 def front_distance():
 
 ##Define the GPIO pin number connected to trig
-    front_sensor_trig = 31
+    front_sensor_trig = 7
 ##Define the GPIO pin number connected to echo
-    front_sensor_echo = 29
+    front_sensor_echo = 11
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -67,9 +72,9 @@ def front_distance():
 def right_distance():
 
 ##Define the GPIO pin number xx connected to trig
-    right_sensor_trig = xx
+    right_sensor_trig = 12
 ##Define the GPIO pin number yy connected to echo
-    right_sensor_echo = yy
+    right_sensor_echo = 22
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -116,9 +121,9 @@ def right_distance():
 def left_distance():
 
 ##Define the GPIO pin number xx connected to trig
-    left_sensor_trig = xx
+    left_sensor_trig = 29
 ##Define the GPIO pin number yy connected to echo
-    left_sensor_echo = yy
+    left_sensor_echo = 31
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -161,6 +166,15 @@ def left_distance():
 ##Instruct the function to return 'distance'
     return left_distance
 
+def clearest_path():
+    if left_distance() < 20 and right_distance() < 20:
+        clearest_path = 'reverse'
+    else:
+        dist_diff = left_distance() - right_distance()
+        if dist_diff >= 0:
+            clearest_path = 'left'
+        if dist_diff <= 0:
+            clearest_path = 'right'
 '''
 
 print front_distance(), "cm"
