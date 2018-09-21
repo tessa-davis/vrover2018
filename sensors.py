@@ -16,7 +16,32 @@ import time
 
 print("Distance Measurement in Progress")
 
-##Define the distance function (to be imported into drive script)
+##Define a function to trigger the server to pan
+def front_pan():
+
+    GPIO.setmode(GPIO.BOARD)
+
+    GPIO.setup(12,GPIO.OUT)
+
+    pwm=GPIO.PWM(12, 50)
+
+    pwm.start(7.5)
+
+    #left
+    time.sleep(1)
+    pwm.ChangeDutyCycle(10)
+
+    #right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+
+    #centre
+    time.sleep(1)
+    pwm.ChangeDutyCycle(7.5)
+    time.sleep(0.2)
+    GPIO.cleanup()
+
+'''##Define the distance function (to be imported into drive script)
 def front_distance():
 
 ##Define the GPIO pin number connected to trig
@@ -66,6 +91,7 @@ def front_distance():
 
 ##Instruct the function to return 'distance'
     return front_distance
+'''
 
 '''
 ##Define the distance function for the right side (to be imported into drive script)
