@@ -16,6 +16,30 @@ import time
 
 print("Distance Measurement in Progress")
 
+##Define the pan control function
+def pan_control():
+    gpio.setup(gpio.BOARD)
+    gpio.setup(12, gpio.OUT)
+
+    pwm=gpio.PWM(12, 50)
+
+#Reset Pan Servo to center
+    pwm.start(5)
+
+#Pan left
+    time.sleep(0.5)
+    pwm.ChangeDutyCycle(5)
+
+#Pan right
+    time.sleep(0.5)
+    pwm.ChangeDutyCycle(5)
+
+#Reset to center
+    time.sleep(0.5)
+    pwm.ChangeDutyCycle(5)
+    gpio.cleanup()
+##Left
+
 ##Define the distance function (to be imported into drive script)
 def front_distance():
 
