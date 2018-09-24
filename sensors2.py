@@ -3,22 +3,51 @@ import RPi.GPIO as gpio
 ##Import the time library
 import time
 
-##Goal:
-##1. Modify sensors script so that the wheels drive continuously if the distance is > x i.e. the vehicle shouldn't stop to measure distance
 ##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
 ##front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
 
-##front_sensor_trig = 31
-##front_sensor_echo = 29
+##front_sensor_trig = 7
+##front_sensor_echo = 11
+##right_sensor_trig = 12
+##right_sensor_echo = 22
+##left_sensor_trig = 29
+##left_sensor_echo = 31
+
 
 print("Distance Measurement in Progress")
 
-##Define the distance function (to be imported into drive script)
+##Define a function to trigger the server to pan
+def front_pan():
+
+    GPIO.setmode(GPIO.BOARD)
+
+    GPIO.setup(12,GPIO.OUT)
+
+    pwm=GPIO.PWM(12, 50)
+
+    pwm.start(7.5)
+
+    #left
+    time.sleep(1)
+    pwm.ChangeDutyCycle(10)
+
+    #right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+
+    #centre
+    time.sleep(1)
+    pwm.ChangeDutyCycle(7.5)
+    time.sleep(0.2)
+    GPIO.cleanup()
+
+'''##Define the distance function (to be imported into drive script)
 def front_distance():
+
 ##Define the GPIO pin number connected to trig
-    front_sensor_trig = 31
+    front_sensor_trig = 7
 ##Define the GPIO pin number connected to echo
-    front_sensor_echo = 29
+    front_sensor_echo = 11
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -31,7 +60,7 @@ def front_distance():
 ##Print out notice that the sensor is initiating
 ##    print("Waiting for sensor to settle")
 ##Give the sensor time to come online
-    time.sleep(0.00001)
+    time.sleep(0.001)
 
 ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
     gpio.output(front_sensor_trig, True)
@@ -39,6 +68,7 @@ def front_distance():
     time.sleep(0.00001)
 ##Stop the burst after 10uS
     gpio.output(front_sensor_trig, False)
+
 
 ##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
     while gpio.input(front_sensor_echo) == 0:
@@ -48,6 +78,7 @@ def front_distance():
         pulse_end = time.time()
 ##Pulse_duration is the time that passed between a signal appearing and disappearing
     pulse_duration = pulse_end - pulse_start
+
 
 ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
 ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
@@ -60,16 +91,16 @@ def front_distance():
 
 ##Instruct the function to return 'distance'
     return front_distance
-
+'''
 
 '''
 ##Define the distance function for the right side (to be imported into drive script)
 def right_distance():
 
 ##Define the GPIO pin number xx connected to trig
-    right_sensor_trig = xx
+    right_sensor_trig = 12
 ##Define the GPIO pin number yy connected to echo
-    right_sensor_echo = yy
+    right_sensor_echo = 22
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -116,9 +147,9 @@ def right_distance():
 def left_distance():
 
 ##Define the GPIO pin number xx connected to trig
-    left_sensor_trig = xx
+    left_sensor_trig = 29
 ##Define the GPIO pin number yy connected to echo
-    left_sensor_echo = yy
+    left_sensor_echo = 31
 
 ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
     gpio.setmode(gpio.BOARD)
@@ -161,6 +192,15 @@ def left_distance():
 ##Instruct the function to return 'distance'
     return left_distance
 
+def clearest_path():
+    if left_distance() < 20 and right_distance() < 20:
+        clearest_path = 'reverse'
+    else:
+        dist_diff = left_distance() - right_distance()
+        if dist_diff >= 0:
+            clearest_path = 'left'
+        if dist_diff <= 0:
+            clearest_path = 'right'
 '''
 
 print front_distance(), "cm"

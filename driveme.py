@@ -74,7 +74,7 @@ def reverse(tf):
     gpio.output(lft_bk_rev, True)
     time.sleep(tf)
     gpio.cleanup()
-    
+
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
 def turn_left_fwd(tf):
     gpio.setmode(gpio.BOARD)
@@ -117,7 +117,7 @@ def turn_left_rev(tf):
 
     time.sleep(tf)
     gpio.cleanup()
-    
+
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_rev(tf):
     gpio.output(rt_fr_fwd, False)
@@ -130,7 +130,7 @@ def turn_right_rev(tf):
     gpio.output(lft_bk_rev, True)
     time.sleep(tf)
     gpio.cleanup()
-    
+
 ##Define a function that will pivot the vechicle clockwise (right) for an amount of time (tf)
 def pivot_right(tf):
     gpio.setmode(gpio.BOARD)
@@ -158,3 +158,21 @@ def pivot_left(tf):
     time.sleep(tf)
     gpio.cleanup()
 
+
+tf = 3
+#drive vechicle forward for tf
+forward(tf)
+#turn vehicle left while moving forward for tf seconds
+reverse(tf)
+#turn vehicle left while moving forward for tf seconds
+turn_left_fwd(tf)
+#turn vehicle right while moving forward for tf seconds
+turn_right_fwd(tf)
+#turn vehicle left while reversing for tf seconds
+turn_left_rev(tf)
+#turn vehicle right while reversing for tf seconds
+turn_right_rev(tf)
+#Pivot vehicle clockwise (right) for tf seconds
+pivot_right(tf)
+#Pivot vehicle counterclockwise (left) while moving forward for tf seconds
+pivot_left(tf)
