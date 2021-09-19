@@ -2,6 +2,9 @@ import RPi.GPIO as gpio
 import time
 import sys
 
+Username: 'root'
+Password: 'root'
+
 #Goal: Drive vechicle using Remote Control including:
 ## ---driveme.init() --- Initialise GPIO pins to drive as output
 ## ---driveme.forward(tf) --- Drive Foward
